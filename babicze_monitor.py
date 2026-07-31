@@ -304,3 +304,34 @@ def main():
     current = get_products()
 
     print("Znaleziono produktów:", len(current))
+        for url, product in current.items():
+
+        try:
+            current[url] = get_product_details(product)
+        except Exception as error:
+            print(
+                "Błąd produktu:",
+                product["name"],
+                error
+            )
+
+    if old:
+
+        compare(
+            old,
+            current
+        )
+
+    else:
+
+        print(
+            "Pierwsze uruchomienie - zapisuję obecne produkty."
+        )
+
+    save_state(current)
+
+    print("Gotowe.")
+
+
+if __name__ == "__main__":
+    main()
