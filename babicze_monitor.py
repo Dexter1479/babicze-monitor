@@ -300,12 +300,11 @@ def main():
     print("Sprawdzam Babicze Croydon...")
 
     old = load_state()
-
     current = get_products()
 
     print("Znaleziono produktów:", len(current))
-        for url, product in current.items():
 
+    for url, product in current.items():
         try:
             current[url] = get_product_details(product)
         except Exception as error:
@@ -316,17 +315,9 @@ def main():
             )
 
     if old:
-
-        compare(
-            old,
-            current
-        )
-
+        compare(old, current)
     else:
-
-        print(
-            "Pierwsze uruchomienie - zapisuję obecne produkty."
-        )
+        print("Pierwsze uruchomienie - zapisuję obecne produkty.")
 
     save_state(current)
 
