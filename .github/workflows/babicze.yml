@@ -1,0 +1,48 @@
+name: Babicze Monitor
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+
+      - name: Ustaw Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Zainstaluj biblioteki
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Sprawdź Babicze Croydon
+        env:
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python babicze_monitor.py
+
+      - name: Zapisz aktualny stan produktów
+        run: |
+          git config user.name "Babicze Monitor"
+          git config user.email "actions@github.com"
+          git add babicze_state.json
+
+          if git diff --cached --quiet; then
+            echo "Brak zmian do zapisania."
+          else
+            git commit -m "Aktualizacja stanu produktów"
+            git push
+          fi
