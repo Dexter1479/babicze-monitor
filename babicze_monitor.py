@@ -303,5 +303,4 @@ def main():
 
     current = get_products()
 
-    print(
-        "Znale
+    print("Znaleziono produktów:", len(current))
