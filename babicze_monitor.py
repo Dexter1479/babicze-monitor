@@ -326,15 +326,6 @@ def compare(old, current):
 def main():
     print("Sprawdzam Babicze Croydon...")
 
-    send_email(
-        "TEST - BABICZE MONITOR",
-        [
-            "To jest test.",
-            "Jeśli widzisz tę wiadomość, powiadomienia działają poprawnie."
-        ]
-    )
-
-
     old = load_state()
     current = get_products()
 
