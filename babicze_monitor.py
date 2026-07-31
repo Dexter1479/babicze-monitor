@@ -40,37 +40,64 @@ def get_products():
 
     products = {}
 
-    cards = soup.select("li.product")
+    links = soup.select('a[href*="/product/"]')
 
-    for card in cards:
-        link = (
-            card.select_one("a.woocommerce-loop-product__link")
-            or card.select_one("a[href*='/product/']")
-        )
+    for link in links:
+        href = link.get("href")
 
-        if not link or not link.get("href"):
+        if not href:
             continue
 
-        url = urljoin(
-            SHOP_URL,
-            link["href"]
-        ).split("?")[0]
+        url = urljoin(SHOP_URL, href).split("?")[0]
 
-        title = (
-            card.select_one(".woocommerce-loop-product__title")
-            or card.select_one("h2")
-            or card.select_one("h3")
+        # Ten sam produkt może mieć kilka linków na stronie.
+        if url in products:
+            continue
+
+        name = clean_text(link)
+
+        # Czasami nazwa siedzi w nagłówku wewnątrz linku.
+        heading = link.select_one("h1, h2, h3, h4")
+
+        if heading:
+            name = clean_text(heading)
+
+        # Jeśli link nie zawiera nazwy, sprawdzamy rodzica.
+        parent = link.parent
+
+        if (not name or name.lower() in ["wybierz opcje", "dodaj do koszyka"]) and parent:
+            heading = parent.select_one("h1, h2, h3, h4")
+
+            if heading:
+                name = clean_text(heading)
+
+        # Cena z najbliższego kontenera produktu.
+        price = ""
+
+        container = link.find_parent(
+            ["li", "div", "article"]
         )
 
-        price = (
-            card.select_one(".price")
-            or card.select_one(".woocommerce-Price-amount")
-        )
+        if container:
+            price_element = (
+                container.select_one(".price")
+                or container.select_one(".woocommerce-Price-amount")
+            )
+
+            if price_element:
+                price = clean_text(price_element)
+
+        # Pomijamy linki typu "Wybierz opcje" bez nazwy produktu.
+        if not name or name.lower() in [
+            "wybierz opcje",
+            "dodaj do koszyka"
+        ]:
+            continue
 
         products[url] = {
-            "name": clean_text(title) or clean_text(link),
+            "name": name,
             "url": url,
-            "price": clean_text(price),
+            "price": price,
             "sizes": {},
             "overall_stock": None
         }
