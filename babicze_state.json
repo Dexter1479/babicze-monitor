@@ -55,35 +55,47 @@
     "name": "HARDCOCK TEE (BLACK)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-t-shirt-black/",
     "price": "139,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": false,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/hard-cock-logo-t-shirt-black/": {
     "name": "HARDCOCK LOGO TEE (BLACK)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-logo-t-shirt-black/",
     "price": "139,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": true,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/okon-pzw-w-morzu-potrzep/": {
     "name": "OKOŃ PZW ,,W MORZU POTRZEP”",
     "url": "https://www.babiczecroydon.com/product/okon-pzw-w-morzu-potrzep/",
     "price": "59,99 zł",
     "sizes": {},
-    "overall_stock": null
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/bardal-hard-cock-standard/": {
     "name": "BARDAL – HARDCOCK (STANDARD)",
     "url": "https://www.babiczecroydon.com/product/bardal-hard-cock-standard/",
     "price": "54,99 zł",
     "sizes": {},
-    "overall_stock": null
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/nps-standard-preorder/": {
     "name": ",,NPS” STANDARD",
     "url": "https://www.babiczecroydon.com/product/nps-standard-preorder/",
     "price": "54,99 zł",
     "sizes": {},
-    "overall_stock": null
+    "overall_stock": true
   }
 }
