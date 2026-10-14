@@ -3,40 +3,22 @@
     "name": "RÓW BABICZE (R HOODIE)",
     "url": "https://www.babiczecroydon.com/product/row-babicze-r-hoodie/",
     "price": "319,99 zł",
-    "sizes": {
-      "S": false,
-      "M": false,
-      "L": false,
-      "XL": false,
-      "XXL": false
-    },
-    "overall_stock": true
+    "sizes": {},
+    "overall_stock": null
   },
   "https://www.babiczecroydon.com/product/hard-cock-hoodie/": {
     "name": "HARDCOCK HOODIE (BLACK)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-hoodie/",
     "price": "319,99 zł",
-    "sizes": {
-      "S": false,
-      "M": false,
-      "L": false,
-      "XL": true,
-      "XXL": false
-    },
-    "overall_stock": true
+    "sizes": {},
+    "overall_stock": null
   },
   "https://www.babiczecroydon.com/product/hard-cock-t-shirt-white/": {
     "name": "HARDCOCK TEE (WHITE)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-t-shirt-white/",
     "price": "139,99 zł",
-    "sizes": {
-      "S": false,
-      "M": false,
-      "L": false,
-      "XL": false,
-      "XXL": false
-    },
-    "overall_stock": true
+    "sizes": {},
+    "overall_stock": null
   },
   "https://www.babiczecroydon.com/product/hard-cock-t-shirt/": {
     "name": "HARDCOCK LOGO (WHITE)",
