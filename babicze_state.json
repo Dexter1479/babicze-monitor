@@ -16,22 +16,40 @@
     "name": "HARDCOCK HOODIE (BLACK)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-hoodie/",
     "price": "319,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": true,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/hard-cock-t-shirt-white/": {
     "name": "HARDCOCK TEE (WHITE)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-t-shirt-white/",
     "price": "139,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": false,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/hard-cock-t-shirt/": {
     "name": "HARDCOCK LOGO (WHITE)",
     "url": "https://www.babiczecroydon.com/product/hard-cock-t-shirt/",
     "price": "139,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": false,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/hard-cock-t-shirt-black/": {
     "name": "HARDCOCK TEE (BLACK)",
