@@ -3,8 +3,14 @@
     "name": "RÓW BABICZE (R HOODIE)",
     "url": "https://www.babiczecroydon.com/product/row-babicze-r-hoodie/",
     "price": "319,99 zł",
-    "sizes": {},
-    "overall_stock": null
+    "sizes": {
+      "S": false,
+      "M": false,
+      "L": false,
+      "XL": false,
+      "XXL": false
+    },
+    "overall_stock": true
   },
   "https://www.babiczecroydon.com/product/hard-cock-hoodie/": {
     "name": "HARDCOCK HOODIE (BLACK)",
